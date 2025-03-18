@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.0 on win32)" generated="2025-03-13T11:28:57.935972" rpa="false" schemaversion="5">
+<suite id="s1" name="Demo" source="C:\Users\tonno\Documents\GitHub\robot-scripts\keyword-demo\demo.robot">
+<test id="s1-t1" name="Test case1" line="5">
+<kw name="Do something">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-13T11:28:57.954224" level="INFO">I am doing something...</msg>
+<arg>I am doing something...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-13T11:28:57.954224" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-03-13T11:28:57.953218" elapsed="0.001006"/>
+</kw>
+<kw name="DO something else">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-13T11:28:57.954738" level="INFO">I am doing something else...</msg>
+<arg>I am doing something else...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-13T11:28:57.954738" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-03-13T11:28:57.954738" elapsed="0.001059"/>
+</kw>
+<status status="PASS" start="2025-03-13T11:28:57.953218" elapsed="0.002579"/>
+</test>
+<test id="s1-t2" name="Test case2" line="9">
+<kw name="Do another thing">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-13T11:28:57.958111" level="INFO">I am doing another thing...</msg>
+<arg>I am doing another thing...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-13T11:28:57.957109" elapsed="0.001002"/>
+</kw>
+<status status="PASS" start="2025-03-13T11:28:57.957109" elapsed="0.001002"/>
+</kw>
+<kw name="DO something else">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-13T11:28:57.958111" level="INFO">I am doing something else...</msg>
+<arg>I am doing something else...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-13T11:28:57.958111" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-03-13T11:28:57.958111" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-03-13T11:28:57.955797" elapsed="0.002994"/>
+</test>
+<status status="PASS" start="2025-03-13T11:28:57.937135" elapsed="0.021656"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Demo">Demo</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.0 on win32)" generated="2025-03-14T15:04:39.819522" rpa="false" schemaversion="5">
+<suite id="s1" name="Amazon" source="C:\Users\tonno\Documents\GitHub\robot-scripts\Amazon\tests\amazon.robot">
+<kw name="Insert Testing Data" owner="Common" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-14T15:04:40.002566" level="INFO">I am seting up the data...</msg>
+<arg>I am seting up the data...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-14T15:04:40.002566" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:04:40.002566" elapsed="0.000000"/>
+</kw>
+<test id="s1-t1" name="User can search for products" line="15">
+<kw name="Begin Web Test" owner="Common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:04:40.004075" level="INFO">Opening browser 'edge' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>edge</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-14T15:04:40.004075" elapsed="1.431662"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:04:40.004075" elapsed="1.431662"/>
+</kw>
+<kw name="Search For Products" owner="Amazon">
+<kw name="go page load" owner="LoadingPage">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:04:41.436751" level="INFO">Opening url 'https://www.amazon.com'</msg>
+<arg>https://www.amazon.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-03-14T15:04:41.436751" elapsed="1.982919"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:04:41.436751" elapsed="1.982919"/>
+</kw>
+<kw name="verify page loaded" owner="LoadingPage">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id=nav-logo-sprites</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-14T15:04:43.420955" elapsed="0.019949"/>
+</kw>
+<kw name="picture result" owner="LoadingPage">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:04:43.584915" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots1.png"&gt;&lt;img src="screenshots1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>screenshots1.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-14T15:04:43.440904" elapsed="0.144011"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:04:43.440904" elapsed="0.144011"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:04:43.420955" elapsed="0.163960"/>
+</kw>
+<kw name="search product" owner="TopNav">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:04:43.585916" level="INFO">Typing text 'Ferrari 458' into text field 'id=twotabsearchtextbox'.</msg>
+<arg>id=twotabsearchtextbox</arg>
+<arg>Ferrari 458</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-14T15:04:43.585916" elapsed="0.113946"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:04:43.699862" level="INFO">Clicking button 'xpath=//*[@id="nav-search-submit-button"]'.</msg>
+<arg>xpath=//*[@id="nav-search-submit-button"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-14T15:04:43.699862" elapsed="0.410128"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:04:43.584915" elapsed="0.525075"/>
+</kw>
+<kw name="verify result completed" owner="SearchResult">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>results for "Ferrari 458"</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-14T15:04:44.110990" elapsed="2.284686"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:04:44.109990" elapsed="2.286689"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:04:41.436751" elapsed="4.959928"/>
+</kw>
+<kw name="Eng Web Test" owner="Common" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-14T15:04:46.396679" elapsed="2.153967"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:04:46.396679" elapsed="2.153967"/>
+</kw>
+<doc>This is some basic info about the test</doc>
+<tag>Smoke</tag>
+<status status="PASS" start="2025-03-14T15:04:40.002566" elapsed="8.549237"/>
+</test>
+<test id="s1-t2" name="User can view a product" line="21">
+<kw name="Begin Web Test" owner="Common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:04:48.552339" level="INFO">Opening browser 'edge' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>edge</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-14T15:04:48.552339" elapsed="1.419096"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:04:48.552339" elapsed="1.419096"/>
+</kw>
+<kw name="Search For Products" owner="Amazon">
+<kw name="go page load" owner="LoadingPage">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:04:49.972459" level="INFO">Opening url 'https://www.amazon.com'</msg>
+<arg>https://www.amazon.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-03-14T15:04:49.972459" elapsed="2.402837"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:04:49.972459" elapsed="2.402837"/>
+</kw>
+<kw name="verify page loaded" owner="LoadingPage">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id=nav-logo-sprites</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-14T15:04:52.375296" elapsed="0.028638"/>
+</kw>
+<kw name="picture result" owner="LoadingPage">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:04:52.531158" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots1.png"&gt;&lt;img src="screenshots1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>screenshots1.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-14T15:04:52.404440" elapsed="0.126718"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:04:52.403934" elapsed="0.127224"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:04:52.375296" elapsed="0.155862"/>
+</kw>
+<kw name="search product" owner="TopNav">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:04:52.531158" level="INFO">Typing text 'Ferrari 458' into text field 'id=twotabsearchtextbox'.</msg>
+<arg>id=twotabsearchtextbox</arg>
+<arg>Ferrari 458</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-14T15:04:52.531158" elapsed="0.104268"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:04:52.635426" level="INFO">Clicking button 'xpath=//*[@id="nav-search-submit-button"]'.</msg>
+<arg>xpath=//*[@id="nav-search-submit-button"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-14T15:04:52.635426" elapsed="2.769128"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:04:52.531158" elapsed="2.873396"/>
+</kw>
+<kw name="verify result completed" owner="SearchResult">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>results for "Ferrari 458"</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-14T15:04:55.405853" elapsed="0.018179"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:04:55.405853" elapsed="0.018179"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:04:49.972459" elapsed="5.451573"/>
+</kw>
+<kw name="Select Product from Search Result" owner="Amazon">
+<kw name="select link product" owner="SearchResult">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:04:55.425097" level="INFO">Clicking link 'Ferrari Burago 1/18 Scale Diecast - 18-16008 488 GTB Rosso red'.</msg>
+<arg>Ferrari Burago 1/18 Scale Diecast - 18-16008 488 GTB Rosso red</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-14T15:04:55.425097" elapsed="2.983761"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:04:55.425097" elapsed="2.983761"/>
+</kw>
+<kw name="verify detail prodoct" owner="Product">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Ferrari Burago 1/18 Scale Diecast - 18-16008 488 GTB Rosso red</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-14T15:04:58.408858" elapsed="0.027513"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:04:58.408858" elapsed="0.027513"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:04:55.425097" elapsed="3.011274"/>
+</kw>
+<kw name="Eng Web Test" owner="Common" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-14T15:04:58.436371" elapsed="2.157384"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:04:58.436371" elapsed="2.157384"/>
+</kw>
+<doc>This is some basic info about the test</doc>
+<tag>Smoke</tag>
+<status status="PASS" start="2025-03-14T15:04:48.552339" elapsed="12.042720"/>
+</test>
+<test id="s1-t3" name="User can add product to cart" line="28">
+<kw name="Begin Web Test" owner="Common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:05:00.596354" level="INFO">Opening browser 'edge' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>edge</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-14T15:05:00.596354" elapsed="1.409860"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:00.595059" elapsed="1.411155"/>
+</kw>
+<kw name="Search For Products" owner="Amazon">
+<kw name="go page load" owner="LoadingPage">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:05:02.008219" level="INFO">Opening url 'https://www.amazon.com'</msg>
+<arg>https://www.amazon.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-03-14T15:05:02.008219" elapsed="1.589519"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:02.007216" elapsed="1.590522"/>
+</kw>
+<kw name="verify page loaded" owner="LoadingPage">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id=nav-logo-sprites</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-14T15:05:03.598752" elapsed="0.010425"/>
+</kw>
+<kw name="picture result" owner="LoadingPage">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:05:03.754059" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots1.png"&gt;&lt;img src="screenshots1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>screenshots1.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-14T15:05:03.609177" elapsed="0.144882"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:03.609177" elapsed="0.144882"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:03.598752" elapsed="0.155307"/>
+</kw>
+<kw name="search product" owner="TopNav">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:05:03.754059" level="INFO">Typing text 'Ferrari 458' into text field 'id=twotabsearchtextbox'.</msg>
+<arg>id=twotabsearchtextbox</arg>
+<arg>Ferrari 458</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-14T15:05:03.754059" elapsed="0.099754"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:05:03.853813" level="INFO">Clicking button 'xpath=//*[@id="nav-search-submit-button"]'.</msg>
+<arg>xpath=//*[@id="nav-search-submit-button"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-14T15:05:03.853813" elapsed="0.404911"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:03.754059" elapsed="0.504665"/>
+</kw>
+<kw name="verify result completed" owner="SearchResult">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>results for "Ferrari 458"</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-14T15:05:04.259895" elapsed="2.119785"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:04.259895" elapsed="2.119785"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:02.007216" elapsed="4.372464"/>
+</kw>
+<kw name="Select Product from Search Result" owner="Amazon">
+<kw name="select link product" owner="SearchResult">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:05:06.381134" level="INFO">Clicking link 'Ferrari Burago 1/18 Scale Diecast - 18-16008 488 GTB Rosso red'.</msg>
+<arg>Ferrari Burago 1/18 Scale Diecast - 18-16008 488 GTB Rosso red</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-14T15:05:06.381134" elapsed="3.001888"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:06.381134" elapsed="3.001888"/>
+</kw>
+<kw name="verify detail prodoct" owner="Product">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Ferrari Burago 1/18 Scale Diecast - 18-16008 488 GTB Rosso red</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-14T15:05:09.384020" elapsed="0.026853"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:09.383022" elapsed="0.027851"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:06.379680" elapsed="3.031193"/>
+</kw>
+<kw name="Add Product to Cart" owner="Amazon">
+<kw name="click add cart" owner="Product">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:05:09.412105" level="INFO">Clicking button 'id=add-to-cart-button'.</msg>
+<arg>id=add-to-cart-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-14T15:05:09.412105" elapsed="2.392797"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:09.412105" elapsed="2.392797"/>
+</kw>
+<kw name="verify product added" owner="Cart">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Added to cart</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-14T15:05:11.806334" elapsed="0.035590"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:11.804902" elapsed="0.037022"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:09.412105" elapsed="2.429819"/>
+</kw>
+<kw name="Eng Web Test" owner="Common" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-14T15:05:11.843310" elapsed="2.173951"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:11.841924" elapsed="2.175337"/>
+</kw>
+<doc>This is some basic info about the test</doc>
+<tag>Smoke</tag>
+<status status="PASS" start="2025-03-14T15:05:00.595059" elapsed="13.422202"/>
+</test>
+<test id="s1-t4" name="User must sign in to check out" line="36">
+<kw name="Begin Web Test" owner="Common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:05:14.019750" level="INFO">Opening browser 'edge' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>edge</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-14T15:05:14.019750" elapsed="1.397597"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:14.019750" elapsed="1.397597"/>
+</kw>
+<kw name="Search For Products" owner="Amazon">
+<kw name="go page load" owner="LoadingPage">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:05:15.418356" level="INFO">Opening url 'https://www.amazon.com'</msg>
+<arg>https://www.amazon.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-03-14T15:05:15.418356" elapsed="2.646769"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:15.418356" elapsed="2.646769"/>
+</kw>
+<kw name="verify page loaded" owner="LoadingPage">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id=nav-logo-sprites</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-14T15:05:18.065125" elapsed="0.018979"/>
+</kw>
+<kw name="picture result" owner="LoadingPage">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:05:18.222146" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots1.png"&gt;&lt;img src="screenshots1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>screenshots1.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-14T15:05:18.084104" elapsed="0.138042"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:18.084104" elapsed="0.138042"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:18.065125" elapsed="0.157021"/>
+</kw>
+<kw name="search product" owner="TopNav">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:05:18.223588" level="INFO">Typing text 'Ferrari 458' into text field 'id=twotabsearchtextbox'.</msg>
+<arg>id=twotabsearchtextbox</arg>
+<arg>Ferrari 458</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-14T15:05:18.223588" elapsed="0.108559"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:05:18.333195" level="INFO">Clicking button 'xpath=//*[@id="nav-search-submit-button"]'.</msg>
+<arg>xpath=//*[@id="nav-search-submit-button"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-14T15:05:18.333195" elapsed="0.397744"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:18.223588" elapsed="0.507351"/>
+</kw>
+<kw name="verify result completed" owner="SearchResult">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>results for "Ferrari 458"</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-14T15:05:18.732032" elapsed="2.079012"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:18.730939" elapsed="2.080105"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:15.418356" elapsed="5.392688"/>
+</kw>
+<kw name="Select Product from Search Result" owner="Amazon">
+<kw name="select link product" owner="SearchResult">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:05:20.812152" level="INFO">Clicking link 'Ferrari Burago 1/18 Scale Diecast - 18-16008 488 GTB Rosso red'.</msg>
+<arg>Ferrari Burago 1/18 Scale Diecast - 18-16008 488 GTB Rosso red</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-14T15:05:20.812152" elapsed="2.966589"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:20.812152" elapsed="2.966589"/>
+</kw>
+<kw name="verify detail prodoct" owner="Product">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Ferrari Burago 1/18 Scale Diecast - 18-16008 488 GTB Rosso red</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-14T15:05:23.780129" elapsed="0.039814"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:23.780129" elapsed="0.039814"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:20.811044" elapsed="3.008899"/>
+</kw>
+<kw name="Add Product to Cart" owner="Amazon">
+<kw name="click add cart" owner="Product">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:05:23.820945" level="INFO">Clicking button 'id=add-to-cart-button'.</msg>
+<arg>id=add-to-cart-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-14T15:05:23.820945" elapsed="2.237944"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:23.820945" elapsed="2.237944"/>
+</kw>
+<kw name="verify product added" owner="Cart">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Added to cart</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-14T15:05:26.058889" elapsed="0.020579"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:26.058889" elapsed="0.020579"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:23.820945" elapsed="2.258523"/>
+</kw>
+<kw name="Begin Checkout" owner="Amazon">
+<kw name="proceed to checkout" owner="Cart">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:05:26.080761" level="INFO">Clicking element 'name=proceedToRetailCheckout'.</msg>
+<arg>name=proceedToRetailCheckout</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-14T15:05:26.080761" elapsed="1.983527"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:26.080761" elapsed="1.983527"/>
+</kw>
+<kw name="verify page loaded" owner="SignIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:05:28.078519" level="INFO">Current page contains element 'xpath=//h1[contains(text(), 'Sign in')]'.</msg>
+<arg>xpath=//h1[contains(text(), 'Sign in')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-03-14T15:05:28.064288" elapsed="0.014231"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-14T15:05:28.078519" level="INFO">Verifying element 'xpath=//h1[contains(text(), 'Sign in')]' contains exact text 'Sign in'.</msg>
+<arg>xpath=//h1[contains(text(), 'Sign in')]</arg>
+<arg>Sign in</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-03-14T15:05:28.078519" elapsed="0.017064"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:28.064288" elapsed="0.031295"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:26.079468" elapsed="2.016115"/>
+</kw>
+<kw name="Eng Web Test" owner="Common" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-14T15:05:28.096586" elapsed="2.190460"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:28.096586" elapsed="2.190460"/>
+</kw>
+<doc>This is some basic info about the test</doc>
+<tag>Smoke</tag>
+<status status="PASS" start="2025-03-14T15:05:14.018406" elapsed="16.268640"/>
+</test>
+<kw name="Cleanup Testing Data" owner="Common" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-14T15:05:30.289930" level="INFO">I am clean up the data...</msg>
+<arg>I am clean up the data...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-14T15:05:30.289930" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-03-14T15:05:30.288880" elapsed="0.001050"/>
+</kw>
+<doc>This is some basic info about the whole suite</doc>
+<status status="PASS" start="2025-03-14T15:04:39.821019" elapsed="50.468911"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="4" fail="0" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Amazon">Amazon</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
