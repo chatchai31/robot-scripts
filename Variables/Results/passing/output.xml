@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.0 on win32)" generated="2025-03-20T15:29:29.804704" rpa="false" schemaversion="5">
+<suite id="s1" name="Passing" source="C:\Users\tonno\Documents\GitHub\robot-scripts\Variables\tests\passing.robot">
+<test id="s1-t1" name="User can search for products" line="6">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-20T15:29:29.991075" level="INFO">@{url_browser} = [ https://www.amazon.com | edge ]</msg>
+<var>@{url_browser}</var>
+<arg>https://www.amazon.com</arg>
+<arg>edge</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-20T15:29:29.991075" elapsed="0.000000"/>
+</kw>
+<kw name="Begin Web Test">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-20T15:29:29.991075" level="INFO">Opening browser 'edge' to base url 'https://www.amazon.com'.</msg>
+<arg>${url_browser}[0]</arg>
+<arg>${url_browser}[1]</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-20T15:29:29.991075" elapsed="4.833337"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-03-20T15:29:34.825470" level="INFO">Clicking link 'Try different image'.</msg>
+<arg>Try different image</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T15:29:34.824412" elapsed="1.264998"/>
+</kw>
+<kw name="Set Test Message" owner="BuiltIn">
+<msg time="2025-03-20T15:29:36.090412" level="INFO">Set test message to:
+Test executed successfully.</msg>
+<arg>Test executed successfully.</arg>
+<doc>Sets message for the current test case.</doc>
+<status status="PASS" start="2025-03-20T15:29:36.090412" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-20T15:29:36.090412" elapsed="2.124806"/>
+</kw>
+<arg>@{url_browser}</arg>
+<status status="PASS" start="2025-03-20T15:29:29.991075" elapsed="8.224143"/>
+</kw>
+<status status="PASS" start="2025-03-20T15:29:29.991075" elapsed="8.225557">Test executed successfully.</status>
+</test>
+<status status="PASS" start="2025-03-20T15:29:29.804704" elapsed="8.411928"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Passing">Passing</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

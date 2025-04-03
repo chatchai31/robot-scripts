@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.0 on win32)" generated="2025-04-03T10:53:11.375427" rpa="false" schemaversion="5">
+<suite id="s1" name="MySql Tests" source="C:\Users\tonno\Documents\GitHub\robot-scripts\Libraries_Robot\tests\MySql_Tests.robot">
+<test id="s1-t1" name="Insert a Record" line="16">
+<kw name="Connect" owner="MySql" type="SETUP">
+<kw name="Connect To Database Using Custom Params" owner="DatabaseLibrary">
+<msg time="2025-04-03T10:53:11.526999" level="WARN">Keyword 'DatabaseLibrary.Connect To Database Using Custom Params' is deprecated. Use new `Connect To Database` keyword with custom parameters instead.
+The deprecated keyword will be removed in future versions.</msg>
+<msg time="2025-04-03T10:53:12.000226" level="INFO">Executing : Connect To Database Using Custom Params : pymysql.connect(db_api_2.connect(database='rftutorial', user='rftutorial', password=***, host='mysql1100.shared-servers.com', port=1091))</msg>
+<msg time="2025-04-03T10:53:12.331212" level="FAIL">OperationalError: (2003, "Can't connect to MySQL server on 'mysql1100.shared-servers.com' ([Errno 11001] getaddrinfo failed)")</msg>
+<arg>pymysql</arg>
+<arg>database='rftutorial', user='rftutorial', password='Demoscript1!', host='mysql1100.shared-servers.com', port=1091</arg>
+<doc>*DEPRECATED* Use new `Connect To Database` keyword with custom parameters instead.
+The deprecated keyword will be removed in future versions.</doc>
+<status status="FAIL" start="2025-04-03T10:53:11.526999" elapsed="0.811105">OperationalError: (2003, "Can't connect to MySQL server on 'mysql1100.shared-servers.com' ([Errno 11001] getaddrinfo failed)")</status>
+</kw>
+<status status="FAIL" start="2025-04-03T10:53:11.526999" elapsed="0.811105">OperationalError: (2003, "Can't connect to MySQL server on 'mysql1100.shared-servers.com' ([Errno 11001] getaddrinfo failed)")</status>
+</kw>
+<kw name="Disconnect" owner="MySql" type="TEARDOWN">
+<kw name="Disconnect From Database" owner="DatabaseLibrary">
+<msg time="2025-04-03T10:53:12.338104" level="INFO">No open database connection to close</msg>
+<doc>Disconnects from the database.</doc>
+<status status="PASS" start="2025-04-03T10:53:12.338104" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-03T10:53:12.338104" elapsed="0.000000"/>
+</kw>
+<tag>MySqlDB</tag>
+<status status="FAIL" start="2025-04-03T10:53:11.526999" elapsed="0.811105">Setup failed:
+OperationalError: (2003, "Can't connect to MySQL server on 'mysql1100.shared-servers.com' ([Errno 11001] getaddrinfo failed)")</status>
+</test>
+<test id="s1-t2" name="Verify Insert Contains Correct Input Data" line="23">
+<kw name="Connect" owner="MySql" type="SETUP">
+<kw name="Connect To Database Using Custom Params" owner="DatabaseLibrary">
+<msg time="2025-04-03T10:53:12.338104" level="WARN">Keyword 'DatabaseLibrary.Connect To Database Using Custom Params' is deprecated. Use new `Connect To Database` keyword with custom parameters instead.
+The deprecated keyword will be removed in future versions.</msg>
+<msg time="2025-04-03T10:53:12.338104" level="INFO">Executing : Connect To Database Using Custom Params : pymysql.connect(db_api_2.connect(database='rftutorial', user='rftutorial', password=***, host='mysql1100.shared-servers.com', port=1091))</msg>
+<msg time="2025-04-03T10:53:12.354293" level="FAIL">OperationalError: (2003, "Can't connect to MySQL server on 'mysql1100.shared-servers.com' ([Errno 11001] getaddrinfo failed)")</msg>
+<arg>pymysql</arg>
+<arg>database='rftutorial', user='rftutorial', password='Demoscript1!', host='mysql1100.shared-servers.com', port=1091</arg>
+<doc>*DEPRECATED* Use new `Connect To Database` keyword with custom parameters instead.
+The deprecated keyword will be removed in future versions.</doc>
+<status status="FAIL" start="2025-04-03T10:53:12.338104" elapsed="0.016189">OperationalError: (2003, "Can't connect to MySQL server on 'mysql1100.shared-servers.com' ([Errno 11001] getaddrinfo failed)")</status>
+</kw>
+<status status="FAIL" start="2025-04-03T10:53:12.338104" elapsed="0.016189">OperationalError: (2003, "Can't connect to MySQL server on 'mysql1100.shared-servers.com' ([Errno 11001] getaddrinfo failed)")</status>
+</kw>
+<kw name="Disconnect" owner="MySql" type="TEARDOWN">
+<kw name="Disconnect From Database" owner="DatabaseLibrary">
+<msg time="2025-04-03T10:53:12.354293" level="INFO">No open database connection to close</msg>
+<doc>Disconnects from the database.</doc>
+<status status="PASS" start="2025-04-03T10:53:12.354293" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-03T10:53:12.354293" elapsed="0.000000"/>
+</kw>
+<tag>MySqlDB</tag>
+<status status="FAIL" start="2025-04-03T10:53:12.338104" elapsed="0.016189">Setup failed:
+OperationalError: (2003, "Can't connect to MySQL server on 'mysql1100.shared-servers.com' ([Errno 11001] getaddrinfo failed)")</status>
+</test>
+<test id="s1-t3" name="Log All Rows" line="27">
+<kw name="Connect" owner="MySql" type="SETUP">
+<kw name="Connect To Database Using Custom Params" owner="DatabaseLibrary">
+<msg time="2025-04-03T10:53:12.368606" level="WARN">Keyword 'DatabaseLibrary.Connect To Database Using Custom Params' is deprecated. Use new `Connect To Database` keyword with custom parameters instead.
+The deprecated keyword will be removed in future versions.</msg>
+<msg time="2025-04-03T10:53:12.368606" level="INFO">Executing : Connect To Database Using Custom Params : pymysql.connect(db_api_2.connect(database='rftutorial', user='rftutorial', password=***, host='mysql1100.shared-servers.com', port=1091))</msg>
+<msg time="2025-04-03T10:53:12.372236" level="FAIL">OperationalError: (2003, "Can't connect to MySQL server on 'mysql1100.shared-servers.com' ([Errno 11001] getaddrinfo failed)")</msg>
+<arg>pymysql</arg>
+<arg>database='rftutorial', user='rftutorial', password='Demoscript1!', host='mysql1100.shared-servers.com', port=1091</arg>
+<doc>*DEPRECATED* Use new `Connect To Database` keyword with custom parameters instead.
+The deprecated keyword will be removed in future versions.</doc>
+<status status="FAIL" start="2025-04-03T10:53:12.368606" elapsed="0.005641">OperationalError: (2003, "Can't connect to MySQL server on 'mysql1100.shared-servers.com' ([Errno 11001] getaddrinfo failed)")</status>
+</kw>
+<status status="FAIL" start="2025-04-03T10:53:12.354293" elapsed="0.019954">OperationalError: (2003, "Can't connect to MySQL server on 'mysql1100.shared-servers.com' ([Errno 11001] getaddrinfo failed)")</status>
+</kw>
+<kw name="Disconnect" owner="MySql" type="TEARDOWN">
+<kw name="Disconnect From Database" owner="DatabaseLibrary">
+<msg time="2025-04-03T10:53:12.376259" level="INFO">No open database connection to close</msg>
+<doc>Disconnects from the database.</doc>
+<status status="PASS" start="2025-04-03T10:53:12.376259" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-03T10:53:12.376259" elapsed="0.002010"/>
+</kw>
+<tag>MySqlDB</tag>
+<status status="FAIL" start="2025-04-03T10:53:12.354293" elapsed="0.023976">Setup failed:
+OperationalError: (2003, "Can't connect to MySQL server on 'mysql1100.shared-servers.com' ([Errno 11001] getaddrinfo failed)")</status>
+</test>
+<doc>These are some MySql Database tests</doc>
+<status status="FAIL" start="2025-04-03T10:53:11.386728" elapsed="0.991541"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="3" skip="0">MySqlDB</stat>
+</tag>
+<suite>
+<stat pass="0" fail="3" skip="0" id="s1" name="MySql Tests">MySql Tests</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-04-03T10:53:11.526999" level="WARN">Keyword 'DatabaseLibrary.Connect To Database Using Custom Params' is deprecated. Use new `Connect To Database` keyword with custom parameters instead.
+The deprecated keyword will be removed in future versions.</msg>
+<msg time="2025-04-03T10:53:12.338104" level="WARN">Keyword 'DatabaseLibrary.Connect To Database Using Custom Params' is deprecated. Use new `Connect To Database` keyword with custom parameters instead.
+The deprecated keyword will be removed in future versions.</msg>
+<msg time="2025-04-03T10:53:12.368606" level="WARN">Keyword 'DatabaseLibrary.Connect To Database Using Custom Params' is deprecated. Use new `Connect To Database` keyword with custom parameters instead.
+The deprecated keyword will be removed in future versions.</msg>
+</errors>
+</robot>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.0 on win32)" generated="2025-04-03T13:50:54.465167" rpa="false" schemaversion="5">
+<suite id="s1" name="Api-Conv" source="C:\Users\tonno\Documents\GitHub\robot-scripts\Libraries_Robot\ton_tests\api-conv.robot">
+<test id="s1-t1" name="Query Balance on apiconverter" line="8">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-04-03T13:50:54.554554" level="INFO">Creating Session using : alias=apiconv_session, url=http://10.100.8.139:8080, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>apiconv_session</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-04-03T13:50:54.554554" elapsed="0.001002"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-03T13:50:54.555556" level="INFO">${params} = {'msisdn': '66830131576', 'transaction_id': 'Test202510271427'}</msg>
+<var>${params}</var>
+<arg>msisdn=66830131576</arg>
+<arg>transaction_id=Test202510271427</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-03T13:50:54.555556" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-04-03T13:50:55.178540" level="INFO">GET Request : url=http://10.100.8.139:8080/queryBalance?msisdn=66830131576&amp;transaction_id=Test202510271427 
+ path_url=/queryBalance?msisdn=66830131576&amp;transaction_id=Test202510271427 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-04-03T13:50:55.178540" level="INFO">GET Response : url=http://10.100.8.139:8080/queryBalance?msisdn=66830131576&amp;transaction_id=Test202510271427 
+ status=200, reason= 
+ headers={'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Thu, 03 Apr 2025 06:50:54 GMT'} 
+ body={"transaction_id":"Test202510271427","topup_balance":"null","main_balance":"138.07","description":"Operation successfully"} 
+ </msg>
+<msg time="2025-04-03T13:50:55.178540" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>apiconv_session</arg>
+<arg>/queryBalance</arg>
+<arg>params=${params}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-03T13:50:54.555556" elapsed="0.622984"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-03T13:50:55.179882" level="INFO">200</msg>
+<arg>${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-03T13:50:55.179882" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-03T13:50:55.180911" level="INFO">{"transaction_id":"Test202510271427","topup_balance":"null","main_balance":"138.07","description":"Operation successfully"}</msg>
+<arg>${response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-03T13:50:55.180911" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-03T13:50:54.553480" elapsed="0.627431"/>
+</test>
+<status status="PASS" start="2025-04-03T13:50:54.466200" elapsed="0.715890"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Api-Conv">Api-Conv</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

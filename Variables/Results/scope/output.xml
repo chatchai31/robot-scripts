@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.0 on win32)" generated="2025-03-20T11:15:04.756709" rpa="false" schemaversion="5">
+<suite id="s1" name="Variable" source="C:\Users\tonno\Documents\GitHub\robot-scripts\Variables\tests\variable.robot">
+<test id="s1-t1" name="create and log a variable" line="7">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T11:15:04.772740" level="INFO">some information</msg>
+<arg>${MY_VARIABLE}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T11:15:04.772740" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-03-20T11:15:04.772740" elapsed="0.000000"/>
+</test>
+<test id="s1-t2" name="access a variable" line="10">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T11:15:04.772740" level="INFO">some information</msg>
+<arg>${MY_VARIABLE}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T11:15:04.772740" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-03-20T11:15:04.772740" elapsed="0.009599"/>
+</test>
+<status status="PASS" start="2025-03-20T11:15:04.756709" elapsed="0.025630"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Variable">Variable</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -7,6 +7,9 @@ Resource    C:/Users/tonno/Documents/GitHub/robot-scripts/Amazon/Resources/PO/Ca
 Resource    C:/Users/tonno/Documents/GitHub/robot-scripts/Amazon/Resources/PO/SignIn.robot
 
 *** Keywords ***
+Login
+    [Arguments]    ${username}     ${password}
+    SignIn.Login with valid credentials     ${username}     ${password}
 Search For Products
     LoadingPage.go page load
     LoadingPage.verify page loaded

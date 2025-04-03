@@ -1,53 +1,43 @@
 *** Settings ***
 Documentation       This is some basic info abount the whole suite
 Library             SeleniumLibrary
-
+Resource            ../Resources/Common.robot
+Resource            ../Resources/CrmApp.robot
+Test Setup          Begin Web Test
+Test Teardown       End Begin Test
 #robot -d results tests/crm.robot
 
 *** Variables ***
-${BROWSER}      edge
-${EMAIL}        admin@robotframeworktoturial.com
-${PASS}         qwd
+${BROWSER}                  chrome
+${URL}                      https://automationplayground.com/crm/
+${VALID_EMAIL}              admin@robotframeworktoturial.com
+${VALID_PASSWORD}           qwd
 
 *** Test Cases ***
-# testcase name
+HomePage should loaded
+    [Documentation]                 Test The HomePage
+    [Tags]                          1001    Smoke   HomePage
+    CrmApp.Go to "Home" Page
+
+should be able to Login with valid Creditials
+    [Documentation]                 Test Login
+    [Tags]                          1002    Smoke   Login
+    CrmApp.Go to "Home" Page
+    CrmApp.Login with valid Creditials      ${VALID_EMAIL}    ${VALID_PASSWORD}
+
+should be able to Logout
+    [Documentation]                 Test Logout
+    [Tags]                          1004    Smoke   Logout
+    CrmApp.Go to "Home" Page
+    CrmApp.Login with valid Creditials      ${VALID_EMAIL}    ${VALID_PASSWORD}
+    CrmApp.Logout
+
 should be able to add new customer
-    [Documentation]         This is some basic info abount the TEST
-    [Tags]                  1006    Smoke   Contacts
-#Initailize Selenuim
-    #ความเร็วในการดำเนินการคำสั่ง โดยเพิ่มการหน่วงเวลา (delay) ระหว่างแต่ละคำสั่งในทุกๆ ขั้นตอนของการทดสอบ
-    set selenium speed      .2s
-    #กำหนด ระยะเวลาสูงสุดในการรอ (timeout) เมื่อมีการค้นหาองค์ประกอบ (element) บนหน้าเว็บ
-    set selenium timeout    10s
-#open the browser
-    log                     Starting the test case!
-    open browser            https://automationplayground.com/crm/   ${BROWSER}
-#resize browser window for recording
-    set window position     50     50
-    set window size         1920    1080
-
-    page should contain     Customers Are Priority One
-    click link              id=SignIn
-#Login
-    page should contain     Login
-    input text              id=email-id         ${EMAIL}
-    input text              id=password         ${PASS}
-    click button            id=submit-id
-    page should contain     Our Happy Customers
-#add customer
-    click link              id=new-customer
-    page should contain     Add Customer
-    input text              id=EmailAddress     chatchai@gmail.com
-    input text              id=FirstName        chatchai
-    input text              id=LastName         khamchan
-    input text              id=City             Dollas
-    select from list by value   id=StateOrRegion    NY
-    select radio button     gender         male
-    select checkbox         promos-name
-    click button            Submit
-    wait until page contains    Success! New customer added.
-
-    sleep                   3s
-    close browser
+    [Documentation]                 Test adding a new cutomer
+    [Tags]                          1006    Smoke   Contacts
+    CrmApp.Go to "Home" Page
+    CrmApp.Login with valid Creditials      ${VALID_EMAIL}    ${VALID_PASSWORD}
+    CrmApp.Add new customer
+    CrmApp.Logout
 
 *** Keywords ***
